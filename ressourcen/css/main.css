@@ -41,3 +41,22 @@ body {
     color: #FFF;
     background-color: #428BCA;
 }
+
+/* Login-Form */
+.panel {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+.panel-info {
+    border-color: #428bca;
+}
+.panel-info > .panel-heading {
+    background-color: #428bca;
+    border-color: #428bca;
+    color: #fff;
+}
+#signinlink{
+    color: #fff;
+}

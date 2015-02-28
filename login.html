@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Api-Client</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main-CSS -->
+    <link href="ressourcen/css/main.css" rel="stylesheet">
+
+    <!-- Social-Buttons-CSS -->
+    <link href="ressourcen/css/social-buttons.css" rel="stylesheet">
+    <link href="ressourcen/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Main-JS -->
+    <script src="ressourcen/js/main.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+            <div class="panel-heading">
+                <div class="panel-title">Login</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
+            </div>
+
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form id="loginform" class="form-horizontal" role="form">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Benutzername oder e-Mail">
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Passwort">
+                    </div>
+
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+
+                        <div class="col-sm-12 controls">
+                            <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                            <button class="btn btn-linkedin"><i class="fa fa-linkedin"></i> | Login mit LinkedIn</button>
+
+                            <a href="#">Passwort vergessen?</a>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                Noch kein Konto?
+                                <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                    Registrieren
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Registrierung</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px">
+                    <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login</a>
+                </div>
+            </div>
+            <div class="panel-body" >
+                <form id="signupform" class="form-horizontal" role="form">
+
+                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="email" class="col-md-3 control-label">e-Mail</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="email" placeholder="e-Mail-Adresse">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">Vorname</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="firstname" placeholder="Vorname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Nachname</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="lastname" placeholder="Nachname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-3 control-label">Passwort</label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" name="passwd" placeholder="Passwort">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-signup" type="button" class="btn btn-success"><i class="icon-hand-right"></i> &nbsp Registrieren</button>
+                            <span style="margin-left:8px;">oder</span>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn btn-linkedin"><i class="fa fa-linkedin"></i> | Login mit LinkedIn</button>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="ressourcen/js/docs.js"></script>
+</body>
+</html>
